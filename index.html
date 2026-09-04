@@ -1,455 +1,576 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>Cookie Policy · Kerassentials</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerassentials - These Special Oils Fight Fungus Resistance</title>
+<style>
+  :root{
+    --primary:#8CBDB5;
+    --secondary:#211D50;
+    --action:#D54545;
+    --light-bg:#F5FAF9;
+    --white:#ffffff;
+    --text:#333333;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{overflow-x:hidden;}
+  body{font-family:'Georgia',serif;color:var(--text);line-height:1.6;background:var(--white);overflow-x:hidden;}
+  h1,h2,h3{font-family:'Georgia',serif;color:var(--secondary);}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;}
+  .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+  .center{text-align:center;}
 
-  <!-- ============================================================
-    🔵 GOOGLE ADS — TAG GLOBAL (gtag.js)
-    Necessário para rastreamento. Não remover.
-  ============================================================ -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18423452005"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-18423452005');
-  </script>
-  <!-- ============================================================
-    FIM — TAG GLOBAL
-  ============================================================ -->
+  /* HEADER */
+  header{background:var(--white);border-bottom:1px solid #eee;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+  header .container{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;flex-wrap:wrap;}
+  .logo{font-size:26px;font-weight:bold;color:var(--secondary);letter-spacing:1px;}
+  nav ul{list-style:none;display:flex;gap:28px;align-items:center;flex-wrap:wrap;}
+  nav a{color:var(--secondary);font-weight:bold;font-size:15px;}
+  nav a:hover{color:var(--primary);}
+  .nav-cta{background:var(--action);color:var(--white)!important;padding:10px 22px;border-radius:30px;font-weight:bold;}
+  .nav-cta:hover{opacity:0.9;}
 
-  <!-- ============================================================
-    🟢 CAPTURA DO GCLID E FUNÇÃO PARA ANEXAR À URL
-    Captura o parâmetro gclid da URL da presell e guarda em localStorage.
-    Ao clicar nos botões, anexa esse gclid como "cid" na URL de destino.
-  ============================================================ -->
-  <script>
-    // Captura o gclid da URL da presell assim que a página carrega
-    function getGclid() {
-      var params = new URLSearchParams(window.location.search);
-      var gclid = params.get('gclid');
-      if (gclid) {
-        // Salva em localStorage como backup (caso o clique demore/haja navegação)
-        localStorage.setItem('gclid_saved', gclid);
-        return gclid;
+  /* HERO */
+  .hero{background:linear-gradient(135deg,var(--primary) 0%,#a9d3cb 100%);padding:50px 0;}
+  .hero .container{display:flex;align-items:center;gap:40px;flex-wrap:wrap;}
+  .hero-text{flex:1;min-width:300px;color:var(--white);}
+  .hero-text h1{color:var(--white);font-size:34px;line-height:1.3;margin-bottom:15px;text-shadow:0 2px 8px rgba(0,0,0,0.25);}
+  .hero-text p{font-size:18px;color:var(--white);font-weight:bold;text-shadow:0 2px 6px rgba(0,0,0,0.3);}
+  .hero-img{flex:1;min-width:280px;text-align:center;}
+  .badges-row{margin-top:20px;}
+  .badges-row img{max-width:320px;margin:0 auto;}
+
+  /* TRUST / DOCTOR SECTION */
+  .trust{padding:50px 0;background:var(--white);}
+  .trust .container{display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;}
+  .trust-img{flex:0 0 220px;text-align:center;}
+  .trust-img img{border-radius:10px;}
+  .trust-content{flex:1;min-width:280px;}
+  .trust-content .tag{color:var(--action);font-weight:bold;font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;display:block;}
+  .trust-content h2{font-size:22px;margin-bottom:15px;}
+  .trust-content p{margin-bottom:14px;color:#555;font-size:15px;}
+
+  /* ABOUT SECTION */
+  #about{background:var(--light-bg);padding:60px 0;text-align:center;}
+  #about .brand-name{font-size:14px;letter-spacing:2px;color:var(--secondary);font-weight:bold;margin-bottom:10px;}
+  #about h2{font-size:30px;margin-bottom:10px;color:var(--secondary);}
+  #about img.logo-img{max-width:260px;margin:15px auto 25px;}
+  #about p{max-width:750px;margin:0 auto 25px;font-size:17px;color:#444;}
+  #about .about-bottle{max-width:380px;margin:20px auto 0;}
+
+  /* INGREDIENTS */
+  #ingredients{padding:60px 0;background:var(--white);}
+  #ingredients h2{text-align:center;font-size:30px;margin-bottom:8px;}
+  #ingredients > .container > p{text-align:center;color:#666;margin-bottom:40px;font-size:16px;}
+  .ing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
+  .ing-card{background:var(--light-bg);border-radius:12px;padding:20px;text-align:center;transition:transform .2s;}
+  .ing-card:hover{transform:translateY(-5px);}
+  .ing-card img{width:90px;height:90px;object-fit:cover;border-radius:50%;margin:0 auto 15px;border:3px solid var(--primary);}
+  .ing-card h3{font-size:18px;color:var(--secondary);margin-bottom:10px;}
+  .ing-card ul{list-style:none;text-align:left;font-size:14px;color:#555;}
+  .ing-card ul li{padding-left:20px;position:relative;margin-bottom:6px;}
+  .ing-card ul li::before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:bold;}
+
+  .features-strip{background:var(--secondary);color:var(--white);padding:35px 0;}
+  .features-strip .container{display:flex;justify-content:center;gap:35px;flex-wrap:wrap;text-align:center;}
+  .feature-item{display:flex;flex-direction:column;align-items:center;font-size:14px;font-weight:bold;min-width:110px;}
+  .feature-item .check{width:32px;height:32px;border-radius:50%;background:var(--primary);color:var(--white);display:flex;align-items:center;justify-content:center;margin-bottom:8px;font-size:18px;}
+
+  /* REVIEWS */
+  #reviews{padding:60px 0;background:var(--light-bg);}
+  #reviews h2{text-align:center;font-size:30px;margin-bottom:40px;}
+  .review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
+  .review-card{background:var(--white);border-radius:12px;padding:25px;box-shadow:0 4px 12px rgba(0,0,0,0.06);}
+  .review-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+  .review-head img{width:55px;height:55px;border-radius:50%;object-fit:cover;}
+  .review-head h4{font-size:16px;color:var(--secondary);}
+  .stars{color:#f5a623;font-size:15px;margin-bottom:8px;}
+  .verified{display:inline-block;background:var(--primary);color:var(--white);font-size:11px;padding:3px 10px;border-radius:12px;margin-bottom:10px;font-weight:bold;}
+  .review-card p.quote{font-style:italic;color:#444;font-size:15px;margin-bottom:10px;}
+  .review-card .name{font-weight:bold;color:var(--secondary);font-size:14px;}
+
+  /* OFFERS / CTA */
+  .offers-section{padding:60px 0;background:var(--white);}
+  .offers-section h2{text-align:center;font-size:30px;color:var(--secondary);margin-bottom:10px;}
+  .offers-section > .container > p.sub{text-align:center;color:var(--action);font-weight:bold;margin-bottom:40px;}
+  .offers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:25px;align-items:stretch;}
+  .offer-card{border:2px solid #e5e5e5;border-radius:14px;padding:25px;text-align:center;position:relative;background:var(--white);display:flex;flex-direction:column;}
+  .offer-card.popular{border-color:var(--primary);transform:scale(1.04);box-shadow:0 10px 30px rgba(0,0,0,0.1);z-index:2;}
+  .ribbon{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--action);color:var(--white);padding:6px 18px;border-radius:20px;font-size:13px;font-weight:bold;white-space:nowrap;}
+  .offer-card .plan-name{font-size:16px;text-transform:uppercase;letter-spacing:1px;color:#777;font-weight:bold;margin-top:10px;}
+  .offer-card h3{font-size:28px;margin:8px 0;color:var(--secondary);}
+  .offer-card .supply{font-size:16px;color:#777;margin-bottom:15px;}
+  .offer-card img.bottle-img{max-width:150px;margin:0 auto 15px;}
+  .offer-card .price{font-size:46px;color:var(--action);font-weight:bold;margin-bottom:2px;}
+  .offer-card .price span{font-size:18px;color:#777;font-weight:normal;}
+  .offer-card .total-line{font-size:18px;color:#555;margin-bottom:15px;}
+  .offer-card .total-line s{color:#999;}
+  .offer-card .perks{list-style:none;text-align:left;font-size:17px;color:#444;margin-bottom:20px;flex-grow:1;}
+  .offer-card .perks li{padding-left:26px;position:relative;margin-bottom:10px;}
+  .offer-card .perks li::before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:bold;}
+  .buy-btn{display:block;background:var(--action);color:var(--white);padding:18px 0;border-radius:8px;font-weight:bold;font-size:22px;margin-bottom:10px;transition:opacity .2s;}
+  .buy-btn:hover{opacity:0.88;}
+  .shipping-note{font-size:15px;color:#777;}
+  .reviews-count{text-align:center;margin-top:35px;color:#555;font-size:15px;}
+  .reviews-count .stars{justify-content:center;display:flex;}
+
+  /* GUARANTEE */
+  #guarantee{background:var(--secondary);color:var(--white);padding:55px 0;text-align:center;}
+  #guarantee .badge-img{max-width:140px;margin:0 auto 20px;}
+  #guarantee h2{color:var(--white);font-size:28px;margin-bottom:15px;}
+  #guarantee p{max-width:650px;margin:0 auto;color:#d8d6ea;font-size:16px;}
+
+  /* FAQ */
+  #faq{padding:60px 0;background:var(--light-bg);}
+  #faq h2{text-align:center;font-size:30px;margin-bottom:40px;}
+  .faq-item{background:var(--white);border-radius:10px;padding:20px 25px;margin-bottom:15px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+  .faq-item h3{font-size:17px;color:var(--secondary);margin-bottom:8px;}
+  .faq-item p{font-size:15px;color:#555;}
+
+  /* FOOTER */
+  footer{background:var(--secondary);color:#bbb;padding:35px 0;text-align:center;font-size:13px;}
+  footer .foot-links{margin-bottom:15px;}
+  footer .foot-links a{color:#fff;margin:0 12px;font-size:14px;}
+  footer .foot-links a:hover{color:var(--primary);}
+  footer .disclaimer{max-width:800px;margin:15px auto;font-size:12px;color:#999;}
+
+  /* TABLET */
+  @media(max-width:900px){
+    .hero .container{flex-direction:column;text-align:center;}
+    .trust .container{flex-direction:column;align-items:center;text-align:center;}
+    .offer-card.popular{transform:none;}
+    .ing-grid{grid-template-columns:repeat(2,1fr);}
+    .review-grid{grid-template-columns:repeat(2,1fr);}
+  }
+
+  /* MOBILE */
+  @media(max-width:600px){
+    header .container{flex-direction:column;gap:12px;padding:16px 20px;}
+    nav ul{gap:14px;justify-content:center;flex-wrap:wrap;}
+    nav a{font-size:14px;}
+    .hero{padding:35px 0;}
+    .hero-text h1{font-size:24px;}
+    .hero-text p{font-size:16px;}
+    .trust,#about,#ingredients,#reviews,.offers-section,#guarantee,#faq{padding:40px 0;}
+    #about h2,#ingredients h2,#reviews h2,.offers-section h2,#guarantee h2,#faq h2{font-size:24px;}
+    .ing-grid{grid-template-columns:1fr;}
+    .review-grid{grid-template-columns:1fr;}
+    .offers-grid{grid-template-columns:1fr;}
+    .offer-card.popular{transform:none;}
+    .features-strip .container{gap:20px;}
+    .feature-item{min-width:80px;font-size:12px;}
+    .offer-card .price{font-size:38px;}
+    .buy-btn{font-size:19px;}
+    footer .foot-links a{display:inline-block;margin:6px 10px;}
+  }
+
+  /* SMALL MOBILE */
+  @media(max-width:380px){
+    .hero-text h1{font-size:21px;}
+    .offer-card h3{font-size:24px;}
+    .offer-card .price{font-size:34px;}
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18423452005"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18423452005');
+</script>
+
+<script>
+  // Captura o gclid da URL da presell assim que a página carrega
+  function getGclid() {
+    var params = new URLSearchParams(window.location.search);
+    var gclid = params.get('gclid');
+    if (gclid) {
+      // Salva em localStorage como backup (caso o clique demore/haja navegação)
+      localStorage.setItem('gclid_saved', gclid);
+      return gclid;
+    }
+    // Se não veio na URL agora, tenta recuperar de um clique anterior na mesma sessão
+    return localStorage.getItem('gclid_saved');
+  }
+
+  // Anexa o gclid a uma URL de destino, preservando querystring e fragment (#aff=...)
+  function appendGclidToUrl(url) {
+    var gclid = getGclid();
+    if (!gclid) return url; // se não achou gclid, retorna a URL original sem mexer
+
+    var hashIndex = url.indexOf('#');
+    var baseUrl = hashIndex >= 0 ? url.substring(0, hashIndex) : url;
+    var hash = hashIndex >= 0 ? url.substring(hashIndex) : '';
+
+    var separator = baseUrl.indexOf('?') >= 0 ? '&' : '?';
+    return baseUrl + separator + 'cid=' + encodeURIComponent(gclid) + hash;
+  }
+</script>
+
+<script>
+  function gtag_report_conversion(url) {
+    var finalUrl = appendGclidToUrl(url); // <-- adiciona o gclid como "cid" na URL final
+
+    var callback = function () {
+      if (typeof(finalUrl) != 'undefined') {
+        window.location = finalUrl;
       }
-      // Se não veio na URL agora, tenta recuperar de um clique anterior na mesma sessão
-      return localStorage.getItem('gclid_saved');
-    }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18423452005/QPuvCOfilewcEOWi_tBE',
+        'transaction_id': '',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
 
-    // Anexa o gclid a uma URL de destino, preservando querystring e fragment (#aff=...)
-    function appendGclidToUrl(url) {
-      var gclid = getGclid();
-      if (!gclid) return url; // se não achou gclid, retorna a URL original sem mexer
-
-      var hashIndex = url.indexOf('#');
-      var baseUrl = hashIndex >= 0 ? url.substring(0, hashIndex) : url;
-      var hash = hashIndex >= 0 ? url.substring(hashIndex) : '';
-
-      var separator = baseUrl.indexOf('?') >= 0 ? '&' : '?';
-      return baseUrl + separator + 'cid=' + encodeURIComponent(gclid) + hash;
-    }
-  </script>
-  <!-- ============================================================
-    FIM — CAPTURA DO GCLID
-  ============================================================ -->
-
-  <style>
-    /* ----- RESET & BASE ----- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, 'Helvetica Neue', sans-serif;
-    }
-
-    /* Bloqueia scroll do body enquanto o modal está visível */
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #0a1828;
-      padding: 16px;
-      margin: 0;
-      overflow: hidden;
-      height: 100vh;
-    }
-
-    /* ----- FUNDO COM IMAGEM (bg.jpg - desktop) ----- */
-    .page-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: url('bg.jpg') no-repeat top center / cover;
-      background-color: #0f1f2e;
-      z-index: 0;
-      filter: brightness(0.85) saturate(1.05);
-    }
-
-    /* Mobile: usa bg-m.jpg em vez da versão desktop */
-    @media (max-width: 768px) {
-      .page-bg {
-        background: url('bg-m.jpg') no-repeat top center / cover;
-        background-color: #0f1f2e;
-      }
-    }
-
-    /* Overlay escuro mais sutil */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(8, 20, 35, 0.50);
-      backdrop-filter: blur(1.5px);
-      -webkit-backdrop-filter: blur(1.5px);
-      z-index: 1;
-    }
-
-    /* ----- MODAL - ESTILO PERSONALIZADO (cor #33AF93) ----- */
-    .cookie-modal {
-      position: relative;
-      z-index: 20;
-      max-width: 380px;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border-radius: 20px 20px 18px 18px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 10px 24px rgba(0, 60, 50, 0.3);
-      padding: 1.8rem 1.8rem 1.6rem;
-      animation: popIn 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.1) forwards;
-      transform-origin: center;
-      margin: 12px;
-      border: none;
-    }
-
-    /* Título - cor em tom escuro (#1F7A65) */
-    .modal-title {
-      text-align: center;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1F7A65;
-      letter-spacing: -0.2px;
-      margin: 0.1rem 0 0.3rem;
-      padding-top: 0.1rem;
-      text-transform: capitalize;
-    }
-
-    /* Texto explicativo – tom amigável e curto */
-    .cookie-text {
-      color: #1a3a2e;
-      font-size: 0.85rem;
-      line-height: 1.6;
-      text-align: center;
-      margin: 0.4rem 0 0.8rem;
-      padding: 0.5rem 0.3rem;
-      background: rgba(51, 175, 147, 0.04);
-      border-radius: 12px;
-    }
-
-    .cookie-text p {
-      margin-bottom: 0.3rem;
-    }
-
-    .cookie-text p:last-child {
-      margin-bottom: 0;
-    }
-
-    .cookie-text strong {
-      color: #33AF93;
-      font-weight: 700;
-    }
-
-    .cookie-divider {
-      width: 50px;
-      height: 2px;
-      background: linear-gradient(90deg, #33AF93, #5CCCB2);
-      margin: 0.1rem auto 0.6rem;
-      border-radius: 10px;
-      opacity: 0.4;
-    }
-
-    /* ----- BOTÕES: dois, com opção neutra "No, thanks" ----- */
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 10px 12px;
-      margin: 1.2rem 0 0.4rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 100px;
-      padding: 0.55rem 1.6rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.3px;
-      text-decoration: none;
-      transition: all 0.15s ease;
-      border: 1px solid transparent;
-      cursor: pointer;
-      flex: 1 1 auto;
-    }
-
-    /* Got it – estilo primário (cor #33AF93) */
-    .btn-primary {
-      background: linear-gradient(145deg, #33AF93, #1F7A65);
-      border: 1px solid #1F7A65;
-      color: white;
-      box-shadow: 0 8px 20px -6px rgba(51, 175, 147, 0.4);
-    }
-
-    .btn-primary:hover {
-      background: linear-gradient(145deg, #3DC0A2, #258C75);
-      transform: scale(1.02);
-      box-shadow: 0 12px 28px -8px #1A6655;
-      border-color: #1A6655;
-    }
-
-    /* No, thanks – estilo neutro, mais suave */
-    .btn-secondary {
-      background: #f0f5f2;
-      border: 1px solid #c8d9d0;
-      color: #2a4a3e;
-      backdrop-filter: blur(2px);
-    }
-
-    .btn-secondary:hover {
-      background: #e4ece6;
-      border-color: #a0c0b0;
-      transform: scale(1.01);
-    }
-
-    .btn:active {
-      transform: scale(0.96);
-    }
-
-    /* Rodapé – estilo na cor principal suave */
-    .privacy-footer {
-      text-align: center;
-      font-size: 0.7rem;
-      color: #3a6a5a;
-      letter-spacing: 0.2px;
-      margin-top: 1rem;
-      border-top: 1px solid rgba(51, 175, 147, 0.08);
-      padding-top: 0.8rem;
-      opacity: 0.85;
-      font-weight: 500;
-    }
-
-    .privacy-footer span {
-      background: rgba(51, 175, 147, 0.03);
-      padding: 0.05rem 1rem;
-      border-radius: 30px;
-    }
-
-    /* ----- ANIMAÇÃO popIn ----- */
-    @keyframes popIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.88) translateY(12px);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-    }
-
-    /* ============================================================
-       RESPONSIVO – MOBILE: espaçamento proporcional ao desktop
-    ============================================================ */
-    @media (max-width: 480px) {
-      .cookie-modal {
-        max-width: 280px;
-        width: 100%;
-        padding: 0.8rem 0.8rem 0.6rem;
-        border-radius: 16px 16px 14px 14px;
-        margin: 8px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0.25rem;
-      }
-
-      .modal-title {
-        font-size: 1.0rem;
-        margin: 0.1rem 0 0.2rem;
-        padding-top: 0;
-        flex-shrink: 0;
-        line-height: 1.3;
-      }
-
-      .cookie-text {
-        font-size: 0.8rem;
-        padding: 0.3rem 0.3rem;
-        margin: 0.2rem 0 0.3rem;
-        flex-shrink: 0;
-        border-radius: 10px;
-      }
-
-      .cookie-text p {
-        margin-bottom: 0.2rem;
-      }
-
-      .cookie-divider {
-        width: 30px;
-        height: 2px;
-        margin: 0.1rem auto 0.3rem;
-        flex-shrink: 0;
-      }
-
-      .button-group {
-        gap: 6px;
-        margin: 0.5rem 0 0.2rem;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        width: 100%;
-        flex-shrink: 0;
-      }
-
-      .btn {
-        min-width: 0;
-        padding: 0.35rem 0.5rem;
-        font-size: 0.75rem;
-        flex: 1;
-        white-space: nowrap;
-        border-radius: 40px;
-      }
-
-      .privacy-footer {
-        font-size: 0.6rem;
-        margin-top: 0.4rem;
-        padding-top: 0.4rem;
-        flex-shrink: 0;
-        opacity: 0.8;
-      }
-
-      .privacy-footer span {
-        padding: 0.05rem 0.6rem;
-      }
-
-      .cookie-modal::after {
-        border-radius: 16px 16px 14px 14px;
-      }
-    }
-
-    /* borda interna sutil (apenas refinamento) */
-    .cookie-modal::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 20px 20px 18px 18px;
-      pointer-events: none;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      z-index: 0;
-    }
-  </style>
-
-  <!-- ============================================================
-    🟢 MICROSOFT CLARITY — Gravações e mapas de calor
-    Não remover.
-  ============================================================ -->
-  <script type="text/javascript">
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
     (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "y63nduz43w");
-  </script>
-  <!-- ============================================================
-    FIM — MICROSOFT CLARITY
-  ============================================================ -->
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ycti0x4400");
+</script>
 
 </head>
 <body>
 
-  <!-- ===== FUNDO COM IMAGEM ===== -->
-  <!-- Desktop: bg.jpg | Mobile: bg-m.jpg (via @media) -->
-  <div class="page-bg" role="img" aria-label="Kerassentials - Nail & skin health background"></div>
-  <div class="overlay"></div>
+<!-- 1. HEADER -->
+<header>
+  <div class="container">
+    <div class="logo">Kerassentials</div>
+    <nav>
+      <ul>
+        <li><a href="#about">About Kerassentials</a></li>
+        <li><a href="#ingredients">Ingredients</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#order-now" class="nav-cta">Order Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <!-- ===== MODAL COOKIE POLICY – VERSÃO AMIGÁVEL ===== -->
-  <div class="cookie-modal" role="dialog" aria-labelledby="cookieTitle" aria-modal="true">
-
-    <!-- Título com nome do produto -->
-    <div id="cookieTitle" class="modal-title">
-      Kerassentials — Cookie Policy
+<!-- 2. HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-text">
+      <h1>These Special Oils Fight Fungus Resistance And Support Healthy Nails And Skin</h1>
+      <p>Maintain the <strong>health of your nails and skin</strong> with this <strong>revolutionary treatment</strong> — trusted by over 14,576 happy customers, backed by a 60-day money-back guarantee.</p>
     </div>
-
-    <!-- Texto informativo e acolhedor, sem pressão -->
-    <div class="cookie-text">
-      <p>We use cookies to improve your experience and understand how you use our site.</p>
-      <div style="margin-top: 0.15rem; font-size: 0.75rem; opacity: 0.6; line-height: 1.4;">You can change preferences anytime.</div>
-    </div>
-
-    <div class="cookie-divider"></div>
-
-    <!-- ============================================================
-      🔴 BOTÕES — onclick chama gtag_report_conversion()
-      que dispara o pixel ANTES de redirecionar o usuário,
-      e agora também anexa o gclid (como 'cid') à URL final.
-    ============================================================ -->
-    <div class="button-group">
-      <a href="https://www.checkout-ds24.com/redir/533765/vp0290/?cookies=yes"
-         class="btn btn-primary"
-         id="gotItBtn"
-         onclick="return gtag_report_conversion(this.href)">
-        Got it
-      </a>
-      <a href="https://www.checkout-ds24.com/redir/533765/vp0290/?cookies=declined"
-         class="btn btn-secondary"
-         id="noThanksBtn"
-         onclick="return gtag_report_conversion(this.href)">
-        No, thanks
-      </a>
-    </div>
-    <!-- ============================================================
-      FIM — BOTÕES
-    ============================================================ -->
-
-    <div class="privacy-footer">
-      <span>Your privacy is important to us</span>
+    <div class="hero-img">
+      <img src="https://mykerassentials24.com/statics/img/introducting_kerassentials-new.png" alt="Kerassentials bottle">
+      <div class="badges-row">
+        <img src="https://mykerassentials24.com/statics/img/certifications.png" alt="Certifications">
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- ============================================================
-    🔴 GOOGLE ADS — EVENTO DE CONVERSÃO (Nutra - CTA Click)
-    Dispara quando o usuário clica em qualquer botão do modal.
-    NÃO renomear a função gtag_report_conversion.
-    Agora com a lógica de anexar o gclid como 'cid' na URL.
-  ============================================================ -->
-  <script>
-    function gtag_report_conversion(url) {
-      var finalUrl = appendGclidToUrl(url); // <-- adiciona o gclid como "cid" na URL final
+<!-- Trust / Doctor message -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-img">
+      <img src="https://mykerassentials24.com/statics/img/doctor.png" alt="Doctor">
+    </div>
+    <div class="trust-content">
+      <span class="tag">Dec 2023 – New Scientific Discovery</span>
+      <h2>If you've been struggling for months or years with toenail itching and foul smell… you should know it's not your fault.</h2>
+      <p>You've tried gels, creams and pills but with no real results. According to scientists from the U.S. Centers for Disease Control and Prevention, most people stop antifungal treatment before the infection has been completely eliminated and before a fully healthy nail has grown out.</p>
+      <p>If you stop halfway through and interrupt your body from completely eliminating the infection, you only make the fungus stronger — leading to antifungal resistance, which makes it almost impossible to get rid of the infection next time you use the same treatment.</p>
+    </div>
+  </div>
+</section>
 
-      var callback = function () {
-        if (typeof(finalUrl) != 'undefined') {
-          window.location = finalUrl;
-        }
-      };
-      gtag('event', 'conversion', {
-        'send_to': 'AW-18423452005/QPuvCOfilewcEOWi_tBE',
-        'transaction_id': '',
-        'event_callback': callback
-      });
-      return false;
-    }
-  </script>
-  <!-- ============================================================
-    FIM — EVENTO DE CONVERSÃO
-  ============================================================ -->
+<!-- 3. ABOUT -->
+<section id="about">
+  <div class="container">
+    <span class="brand-name">THAT'S WHY WE CREATED</span>
+    <img class="logo-img" src="https://mykerassentials24.com/statics/img/kerassentials-logo2.png" alt="Kerassentials logo">
+    <p>This formula is unlike anything you've ever tried or experienced in your life before. You will be able to support a <strong>fungus-free life</strong>, without worrying about itching or foul smell. All that while enjoying flawless nails and skin.</p>
+    <img class="about-bottle" src="https://mykerassentials24.com/statics/img/2bottles-tsl-new.png" alt="Kerassentials bottles">
+  </div>
+</section>
+
+<!-- 4. INGREDIENTS -->
+<section id="ingredients">
+  <div class="container">
+    <h2>Inside every drop of Kerassentials you'll find:</h2>
+    <p>A bespoke powerful formula that brings together special high-quality oils and minerals.</p>
+    <div class="ing-grid">
+      <div class="ing-card">
+        <img src="https://mykerassentials24.com/statics/img/ingredient1.png" alt="Lavender Oil">
+        <h3>Lavender Oil</h3>
+        <ul><li>Protects nail keratin</li><li>Supports the nails and skin</li><li>Fights against strong fungus</li></ul>
+      </div>
+      <div class="ing-card">
+        <img src="https://mykerassentials24.com/statics/img/ingredient2.png" alt="Organic Flaxseed Oil">
+        <h3>Organic Flaxseed Oil</h3>
+        <ul><li>Boosts skin's natural immunity</li><li>Helps with inflammation</li><li>Superfood for your skin</li></ul>
+      </div>
+      <div class="ing-card">
+        <img src="https://mykerassentials24.com/statics/img/ingredient3.png" alt="Almond Oil">
+        <h3>Almond Oil</h3>
+        <ul><li>Helps prevent fungus</li><li>Protects against infections</li><li>Supports healthy nails</li></ul>
+      </div>
+      <div class="ing-card">
+        <img src="https://mykerassentials24.com/statics/img/ingredient4.png" alt="Tea Tree Oil">
+        <h3>Tea Tree Oil</h3>
+        <ul><li>Strong antifungal properties</li><li>Helps curb fungus growth</li><li>Safe and effective</li></ul>
+      </div>
+      <div class="ing-card">
+        <img src="https://mykerassentials24.com/statics/img/ingredient5.png" alt="Lemongrass Oil">
+        <h3>Lemongrass Oil</h3>
+        <ul><li>Efficient antifungal</li><li>Prevents future infection</li><li>Helps with inflammation</li></ul>
+      </div>
+      <div class="ing-card">
+        <img src="https://mykerassentials24.com/statics/img/ingredient6.png" alt="Aloe Vera">
+        <h3>Aloe Vera</h3>
+        <ul><li>Soothes the skin</li><li>Strong antifungal</li><li>Moisturizes the skin</li></ul>
+      </div>
+      <div class="ing-card">
+        <img src="https://mykerassentials24.com/statics/img/ingredient7.png" alt="Tocopheryl Acetate">
+        <h3>Tocopheryl Acetate</h3>
+        <ul><li>Stable form of Vit. E</li><li>Protects the skin</li><li>Prevents skin aging</li></ul>
+      </div>
+      <div class="ing-card">
+        <img src="https://mykerassentials24.com/statics/img/ingredient9.png" alt="Undecylenic Acid">
+        <h3>Undecylenic Acid</h3>
+        <ul><li>Beneficial fatty acid</li><li>Helps prevent fungus</li><li>Helps protect the nails</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="features-strip">
+  <div class="container">
+    <div class="feature-item"><div class="check">✓</div>Natural Formula</div>
+    <div class="feature-item"><div class="check">✓</div>Plant Ingredients</div>
+    <div class="feature-item"><div class="check">✓</div>Non-GMO</div>
+    <div class="feature-item"><div class="check">✓</div>Easy To Use</div>
+    <div class="feature-item"><div class="check">✓</div>No Chemicals</div>
+    <div class="feature-item"><div class="check">✓</div>No Stimulants</div>
+  </div>
+</div>
+
+<!-- 5. REVIEWS -->
+<section id="reviews">
+  <div class="container">
+    <h2>Real Kerassentials Users. Real Life-Changing Results.</h2>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="review-head">
+          <img src="https://mykerassentials24.com/statics/img/testimonial-face1.png" alt="Ella Simpson">
+          <h4>Ella Simpson enjoys her healthy nails and skin…</h4>
+        </div>
+        <div class="stars">★★★★★</div>
+        <span class="verified">Verified Purchase</span>
+        <p class="quote">"This literally saved my feet! I can't recommend Kerassentials enough!"</p>
+        <div class="name">Ella Simpson – New York, USA</div>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <img src="https://mykerassentials24.com/statics/img/testimonial-face2.png" alt="Riley Harrison">
+          <h4>Riley Harrison has shared the product with her entire family…</h4>
+        </div>
+        <div class="stars">★★★★★</div>
+        <span class="verified">Verified Purchase</span>
+        <p class="quote">"I've been struggling with foot fungus since high school and this is the only thing that helped. I still can't believe how great it worked!"</p>
+        <div class="name">Riley Harrison – Wyoming, USA</div>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <img src="https://mykerassentials24.com/statics/img/testimonial-face3.png" alt="Brandon Johnson">
+          <h4>Brandon Johnson is happy with his new nails…</h4>
+        </div>
+        <div class="stars">★★★★★</div>
+        <span class="verified">Verified Purchase</span>
+        <p class="quote">"I've tried many products to get rid of foot fungus before Kerassentials. I even had one nail removed but when it grew back, the fungus returned. Kerassentials is the only thing that actually helped."</p>
+        <div class="name">Brandon Johnson – Chicago, USA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CTA / OFFERS -->
+<section id="order-now" class="offers-section">
+  <div class="container">
+    <h2>Claim Your Discounted Kerassentials Below While Stocks Last!</h2>
+    <p class="sub">Order 6 Bottles and Get 3 FREE Bonuses + A Surprise Gift!</p>
+    <div class="offers-grid">
+
+      <div class="offer-card">
+        <div class="plan-name">Basic</div>
+        <h3>2 Bottles</h3>
+        <div class="supply">60 Day Supply</div>
+        <img class="bottle-img" src="https://mykerassentials24.com/statics/img/2bottles-tsl-new.png" alt="2 Bottles Kerassentials">
+        <div class="price">$79<span>/bottle</span></div>
+        <div class="total-line">TOTAL: <s>$358</s> <strong>$158</strong></div>
+        <ul class="perks">
+          <li>You Save $200</li>
+          <li>60 Day Guarantee</li>
+        </ul>
+        <a href="https://www.checkout-ds24.com/product/533763?_b=bnVsbDtteWtlcmFzc2VudGlhbHMyNC5jb20vYWZmaWxpYXRlcy5waHA7dW5kZWZpbmVkO3RleHQ7MTsxNTg7ZmU7dW5kZWZpbmVk&_ga=634714748.1787163434&aff=vp0290" class="buy-btn" onclick="return gtag_report_conversion('https://www.checkout-ds24.com/product/533763?_b=bnVsbDtteWtlcmFzc2VudGlhbHMyNC5jb20vYWZmaWxpYXRlcy5waHA7dW5kZWZpbmVkO3RleHQ7MTsxNTg7ZmU7dW5kZWZpbmVk&_ga=634714748.1787163434&aff=vp0290');">Buy Now</a>
+        <div class="shipping-note">+ $9.99 Shipping</div>
+      </div>
+
+      <div class="offer-card popular">
+        <div class="ribbon">BEST VALUE!</div>
+        <div class="plan-name">Best Value</div>
+        <h3>3 + 3 Bottles</h3>
+        <div class="supply">180 Day Supply</div>
+        <img class="bottle-img" src="https://mykerassentials24.com/statics/img/6-bottles-kerassentials-mob.png" alt="6 Bottles Kerassentials">
+        <div class="price">$49<span>/bottle</span></div>
+        <div class="total-line">TOTAL: <s>$1074</s> <strong>$294</strong></div>
+        <ul class="perks">
+          <li>You Save $780</li>
+          <li>Biggest Discount</li>
+          <li>60 Day Guarantee</li>
+          <li>3 Free Bonuses</li>
+          <li>Surprise Gift</li>
+        </ul>
+        <a href="https://www.checkout-ds24.com/product/631828?aff=vp0290&_b=bnVsbDtteWtlcmFzc2VudGlhbHMyNC5jb20vYWZmaWxpYXRlcy5waHA7dW5kZWZpbmVkO3RleHQ7MjAzOzI5NDtmZTt1bmRlZmluZWQ%3D&_ga=634714748.1787163434&aff=vp0290" class="buy-btn" onclick="return gtag_report_conversion('https://www.checkout-ds24.com/product/631828?aff=vp0290&_b=bnVsbDtteWtlcmFzc2VudGlhbHMyNC5jb20vYWZmaWxpYXRlcy5waHA7dW5kZWZpbmVkO3RleHQ7MjAzOzI5NDtmZTt1bmRlZmluZWQ%3D&_ga=634714748.1787163434&aff=vp0290');">Buy Now</a>
+        <div class="shipping-note">*FREE Shipping</div>
+      </div>
+
+      <div class="offer-card">
+        <div class="plan-name">Most Popular</div>
+        <h3>2 + 1 Bottles</h3>
+        <div class="supply">90 Day Supply</div>
+        <img class="bottle-img" src="https://mykerassentials24.com/statics/img/3-bottles-kerassentials.png" alt="3 Bottles Kerassentials">
+        <div class="price">$69<span>/bottle</span></div>
+        <div class="total-line">TOTAL: <s>$534</s> <strong>$207</strong></div>
+        <ul class="perks">
+          <li>You Save $330</li>
+          <li>60 Day Guarantee</li>
+          <li>Surprise Gift</li>
+        </ul>
+        <a href="https://www.checkout-ds24.com/product/631826?aff=vp0290&_b=bnVsbDtteWtlcmFzc2VudGlhbHMyNC5jb20vYWZmaWxpYXRlcy5waHA7dW5kZWZpbmVkO3RleHQ7MjAyOzIwNztmZTt1bmRlZmluZWQ%3D&_ga=634714748.1787163434&aff=vp0290" class="buy-btn" onclick="return gtag_report_conversion('https://www.checkout-ds24.com/product/631826?aff=vp0290&_b=bnVsbDtteWtlcmFzc2VudGlhbHMyNC5jb20vYWZmaWxpYXRlcy5waHA7dW5kZWZpbmVkO3RleHQ7MjAyOzIwNztmZTt1bmRlZmluZWQ%3D&_ga=634714748.1787163434&aff=vp0290');">Buy Now</a>
+        <div class="shipping-note">*FREE Shipping</div>
+      </div>
+
+    </div>
+    <div class="reviews-count">
+      <div class="stars">★★★★★</div>
+      Our customers say — based on <strong>14,576 reviews!</strong>
+    </div>
+  </div>
+</section>
+
+<!-- 7. GUARANTEE -->
+<section id="guarantee">
+  <div class="container">
+    <img class="badge-img" src="https://mykerassentials24.com/statics/img/guarantee_badge.png" alt="60 Day Money Back Guarantee">
+    <h2>100% Satisfaction 60-Day Money Back Guarantee</h2>
+    <p>Your order today is covered by our iron-clad 60-day 100% money-back guarantee. If you are not impressed with the results, then just write to us and we'll refund every single cent.</p>
+  </div>
+</section>
+
+<!-- 8. FAQ -->
+<section id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>1. So what is Kerassentials, and how does it work again?</h3>
+      <p>Kerassentials is an extremely potent combination of oils and skin supporting vitamins that you can apply every day after you shower to give your nail bed the boost it needs. These carefully selected ingredients will give your skin the support it needs to constantly rebuild itself and stay healthy. Kerassentials is the only complete formula that maintains the health of your nails in multiple ways.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>2. When can I see results?</h3>
+      <p>You can start noticing improvements immediately, because your toenails will look more alive and the itchiness will be soothed. Within the first weeks you should start noticing new healthy pink nails growing out to replace the damaged areas. The biggest change will be in your confidence, seeing yourself finally beat this thing that has been haunting you for so long.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>3. How does the guarantee work again?</h3>
+      <p>When you click on any of the packages above and place your order, you will be covered by our full 60 day, 100% money back guarantee. This means if you change your mind at any time, or for any reason at all, you can just email our customer support team and we will refund your entire investment in Kerassentials — no questions asked. There is absolutely no risk for you.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>4. Ok I am ready to make my order. What now?</h3>
+      <p>Just click on any of the packages above and place your secure order. Make sure you do it before stock runs out. The 6 bottle package is by far the most popular option because it guarantees you will not run out of Kerassentials during the course of your treatment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9. CTA (redundante) -->
+<section class="offers-section" style="background:var(--light-bg);">
+  <div class="container">
+    <h2>Claim Your Discounted Kerassentials Below While Stocks Last!</h2>
+    <p class="sub">Order 6 Bottles and Get 3 FREE Bonuses + A Surprise Gift!</p>
+    <div class="offers-grid">
+
+      <div class="offer-card">
+        <div class="plan-name">Basic</div>
+        <h3>2 Bottles</h3>
+        <div class="supply">60 Day Supply</div>
+        <img class="bottle-img" src="https://mykerassentials24.com/statics/img/2bottles-tsl-new.png" alt="2 Bottles Kerassentials">
+        <div class="price">$79<span>/bottle</span></div>
+        <div class="total-line">TOTAL: <s>$998</s> <strong>$158</strong></div>
+        <ul class="perks">
+          <li>You Save $200</li>
+          <li>60 Day Guarantee</li>
+        </ul>
+        <a href="https://www.checkout-ds24.com/product/533763?_b=bnVsbDtteWtlcmFzc2VudGlhbHMyNC5jb20vYWZmaWxpYXRlcy5waHA7dW5kZWZpbmVkO3RleHQ7MTsxNTg7ZmU7dW5kZWZpbmVk&_ga=634714748.1787163434&aff=vp0290" class="buy-btn" onclick="return gtag_report_conversion('https://www.checkout-ds24.com/product/533763?_b=bnVsbDtteWtlcmFzc2VudGlhbHMyNC5jb20vYWZmaWxpYXRlcy5waHA7dW5kZWZpbmVkO3RleHQ7MTsxNTg7ZmU7dW5kZWZpbmVk&_ga=634714748.1787163434&aff=vp0290');">Buy Now</a>
+        <div class="shipping-note">+ $9.99 Shipping</div>
+      </div>
+
+      <div class="offer-card popular">
+        <div class="ribbon">BEST VALUE!</div>
+        <div class="plan-name">Best Value</div>
+        <h3>3 + 3 Bottles</h3>
+        <div class="supply">180 Day Supply</div>
+        <img class="bottle-img" src="https://mykerassentials24.com/statics/img/6-bottles-kerassentials-mob.png" alt="6 Bottles Kerassentials">
+        <div class="price">$49<span>/bottle</span></div>
+        <div class="total-line">TOTAL: <s>$1929</s> <strong>$294</strong></div>
+        <ul class="perks">
+          <li>You Save $780</li>
+          <li>Biggest Discount</li>
+          <li>60 Day Guarantee</li>
+          <li>3 Free Bonuses</li>
+          <li>Surprise Gift</li>
+        </ul>
+        <a href="https://www.checkout-ds24.com/product/631828?aff=vp0290&_b=bnVsbDtteWtlcmFzc2VudGlhbHMyNC5jb20vYWZmaWxpYXRlcy5waHA7dW5kZWZpbmVkO3RleHQ7MjAzOzI5NDtmZTt1bmRlZmluZWQ%3D&_ga=634714748.1787163434&aff=vp0290" class="buy-btn" onclick="return gtag_report_conversion('https://www.checkout-ds24.com/product/631828?aff=vp0290&_b=bnVsbDtteWtlcmFzc2VudGlhbHMyNC5jb20vYWZmaWxpYXRlcy5waHA7dW5kZWZpbmVkO3RleHQ7MjAzOzI5NDtmZTt1bmRlZmluZWQ%3D&_ga=634714748.1787163434&aff=vp0290');">Buy Now</a>
+        <div class="shipping-note">*FREE Shipping</div>
+      </div>
+
+      <div class="offer-card">
+        <div class="plan-name">Most Popular</div>
+        <h3>2 + 1 Bottles</h3>
+        <div class="supply">90 Day Supply</div>
+        <img class="bottle-img" src="https://mykerassentials24.com/statics/img/3-bottles-kerassentials.png" alt="3 Bottles Kerassentials">
+        <div class="price">$69<span>/bottle</span></div>
+        <div class="total-line">TOTAL: <s>$551</s> <strong>$207</strong></div>
+        <ul class="perks">
+          <li>You Save $330</li>
+          <li>60 Day Guarantee</li>
+          <li>Surprise Gift</li>
+        </ul>
+        <a href="https://www.checkout-ds24.com/product/631826?aff=vp0290&_b=bnVsbDtteWtlcmFzc2VudGlhbHMyNC5jb20vYWZmaWxpYXRlcy5waHA7dW5kZWZpbmVkO3RleHQ7MjAyOzIwNztmZTt1bmRlZmluZWQ%3D&_ga=634714748.1787163434&aff=vp0290" class="buy-btn" onclick="return gtag_report_conversion('https://www.checkout-ds24.com/product/631826?aff=vp0290&_b=bnVsbDtteWtlcmFzc2VudGlhbHMyNC5jb20vYWZmaWxpYXRlcy5waHA7dW5kZWZpbmVkO3RleHQ7MjAyOzIwNztmZTt1bmRlZmluZWQ%3D&_ga=634714748.1787163434&aff=vp0290');">Buy Now</a>
+        <div class="shipping-note">*FREE Shipping</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 10. FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-links">
+      <a href="https://mykerassentials24.com//help/contact-us.php">Contact</a>
+      <a href="https://mykerassentials24.com//help/terms.php">Terms Of Use</a>
+      <a href="https://mykerassentials24.com//help/privacy.php">Privacy Policy</a>
+    </div>
+    <p class="disclaimer">Statements on this website have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using our products.</p>
+    <p>Copyright © 2026 Kerassentials | All Rights Reserved</p>
+  </div>
+</footer>
 
 </body>
 </html>
