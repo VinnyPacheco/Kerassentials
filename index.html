@@ -98,7 +98,7 @@
   .offers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:25px;align-items:stretch;}
   .offer-card{border:2px solid #e5e5e5;border-radius:14px;padding:25px;text-align:center;position:relative;background:var(--white);display:flex;flex-direction:column;}
   .offer-card.popular{border-color:var(--primary);transform:scale(1.04);box-shadow:0 10px 30px rgba(0,0,0,0.1);z-index:2;}
-  .ribbon{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--action);color:var(--white);padding:6px 18px;border-radius:20px;font-size:13px;font-weight:bold;white-space:nowrap;}
+  .ribbon{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#FFD700 0%,#F0A500 100%);color:#1a1a2e;padding:6px 18px;border-radius:20px;font-size:13px;font-weight:bold;white-space:nowrap;box-shadow:0 3px 8px rgba(240,165,0,0.35);}
   .offer-card .plan-name{font-size:16px;text-transform:uppercase;letter-spacing:1px;color:#777;font-weight:bold;margin-top:10px;}
   .offer-card h3{font-size:28px;margin:8px 0;color:var(--secondary);}
   .offer-card .supply{font-size:16px;color:#777;margin-bottom:15px;}
@@ -110,8 +110,8 @@
   .offer-card .perks{list-style:none;text-align:left;font-size:17px;color:#444;margin-bottom:20px;flex-grow:1;}
   .offer-card .perks li{padding-left:26px;position:relative;margin-bottom:10px;}
   .offer-card .perks li::before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:bold;}
-  .buy-btn{display:block;background:var(--action);color:var(--white);padding:18px 0;border-radius:8px;font-weight:bold;font-size:22px;margin-bottom:10px;transition:opacity .2s;}
-  .buy-btn:hover{opacity:0.88;}
+  .buy-btn{display:block;background:linear-gradient(135deg,#FFD700 0%,#F0A500 100%);color:#1a1a2e;padding:18px 0;border-radius:8px;font-weight:bold;font-size:22px;margin-bottom:10px;transition:opacity .2s, transform .2s;box-shadow:0 4px 10px rgba(240,165,0,0.35);}
+  .buy-btn:hover{opacity:0.92;transform:scale(1.05);}
   .shipping-note{font-size:15px;color:#777;}
   .reviews-count{text-align:center;margin-top:35px;color:#555;font-size:15px;}
   .reviews-count .stars{justify-content:center;display:flex;}
